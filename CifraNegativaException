@@ -1,0 +1,7 @@
+package CCManagment;
+
+public class CifraNegativaException extends Exception{
+    public CifraNegativaException (String s) {
+        super (s) ;
+    }
+}
