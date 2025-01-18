@@ -1,0 +1,32 @@
+package CCManagment;
+
+public class CC {
+    private String NomeCorrentista ;
+    private double Saldo ;
+
+    public CC (String NomeCorrentista, double Saldo) {
+        this.NomeCorrentista = NomeCorrentista ;
+        this.Saldo = Saldo ;
+    }
+
+    public void Preleva (double Amount) throws SaldoInsufficienteException {
+    if (Amount > Saldo) {
+        throw new SaldoInsufficienteException("Saldo insufficiente!");
+
+    }
+    else {
+        Saldo = Saldo - Amount ;
+    }
+    }
+    public double getSaldo () {
+        return Saldo ;
+    }
+    public void Deposita (double Amount) throws CifraNegativaException {
+        if (Amount <= 0) {
+            throw new CifraNegativaException("Input non valido");
+        }
+        else {
+            Saldo = Saldo + Amount ;
+        }
+    }
+}
